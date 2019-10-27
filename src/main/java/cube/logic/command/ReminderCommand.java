@@ -1,17 +1,17 @@
 package cube.logic.command;
 
 import cube.logic.command.exception.CommandException;
-import cube.model.food.FoodList;
-import cube.model.food.Food;
-import cube.model.ModelManager;
-import cube.storage.StorageManager;
-import cube.logic.parser.ParserUtil;
 import cube.logic.command.util.CommandResult;
+import cube.logic.parser.ParserUtil;
+import cube.model.ModelManager;
+import cube.model.food.Food;
+import cube.model.food.FoodList;
+import cube.storage.StorageManager;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public class ReminderCommand extends Command{
+public class ReminderCommand extends Command {
     int daysToExpiry;
     int stockIndex;
 
@@ -24,7 +24,7 @@ public class ReminderCommand extends Command{
 
     private void buildExpiryReminder(FoodList list) {
         MESSAGE_SUCCESS += "Here are the upcoming expiry dates:\n";
-        for(int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             Food food = list.get(i);
             MESSAGE_SUCCESS += String.format("%1$s due in %2$s\n", food.getName(), ParserUtil.parseDateToString(food.getExpiryDate()));
         }
@@ -33,7 +33,7 @@ public class ReminderCommand extends Command{
 
     private void buildStockReminder(FoodList list) {
         MESSAGE_SUCCESS += "Here are the food products that are low in stock:\n";
-        for(int i = 0; i < list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             Food food = list.get(i);
             MESSAGE_SUCCESS += String.format("%1$s : %2$s left\n", food.getName(), food.getStock());
         }
@@ -43,7 +43,7 @@ public class ReminderCommand extends Command{
      * Shows the list of food products that are low on stock (less than quantity of 5)
      * or approaching/nearing its expiry date (by a week or lesser).
      *
-     * @param list the list of food products
+     * @param model   ModelManager containing FoodList & SalesHistory.
      * @param storage storage of Cube
      */
 
@@ -64,7 +64,7 @@ public class ReminderCommand extends Command{
                 expiryReminder.add(food);
             }
 
-            if (stock != 0 && stock < stockIndex ) {
+            if (stock != 0 && stock < stockIndex) {
                 stockReminder.add(food);
             }
         }

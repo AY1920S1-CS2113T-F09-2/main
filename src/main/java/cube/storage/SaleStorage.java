@@ -3,6 +3,7 @@
  *
  * @author tygq13
  */
+
 package cube.storage;
 
 import cube.model.sale.SalesHistory;
@@ -19,6 +20,7 @@ public class SaleStorage {
 
     /**
      * Getter for SalesHistory.
+     *
      * @return SalesHistory object containing previous sales histories.
      */
     public SalesHistory getSalesHistory() {
@@ -27,6 +29,7 @@ public class SaleStorage {
 
     /**
      * Setter for SalesHistory.
+     *
      * @param salesHistory object containing sales histories.
      */
     public void storeSalesHistory(SalesHistory salesHistory) {

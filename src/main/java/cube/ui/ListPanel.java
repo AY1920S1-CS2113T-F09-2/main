@@ -1,9 +1,9 @@
 package cube.ui;
 
 import cube.model.food.FoodList;
+import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.StackPane;
-import javafx.fxml.FXML;
 
 public class ListPanel extends UiManager<StackPane> {
     private static final String FXML = "ListPanel.fxml";

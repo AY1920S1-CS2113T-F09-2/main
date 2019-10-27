@@ -3,6 +3,7 @@
  *
  * @author kuromono
  */
+
 package cube.util;
 
 import cube.exception.CubeLoadingException;

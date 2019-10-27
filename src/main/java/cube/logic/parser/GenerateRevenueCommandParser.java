@@ -1,4 +1,5 @@
 //@@author LL-Pengfei
+
 package cube.logic.parser;
 
 import cube.logic.command.GenerateRevenueCommand;
@@ -14,14 +15,14 @@ public class GenerateRevenueCommandParser implements ParserPrototype<GenerateRev
         }
 
         switch (args[1]) {
-            case "-all":
-                return new GenerateRevenueCommand("ALL");
-            case "-i":
-                return new GenerateRevenueCommand(Integer.parseInt(args[2]),"INDEX");
-            case "-n":
-                return new GenerateRevenueCommand(String.join(" ", Arrays.copyOfRange(args,2,args.length)),"NAME");
-            case "-t":
-                return new GenerateRevenueCommand(String.join(" ", Arrays.copyOfRange(args,2,args.length)),"TYPE");
+        case "-all":
+            return new GenerateRevenueCommand("ALL");
+        case "-i":
+            return new GenerateRevenueCommand(Integer.parseInt(args[2]), "INDEX");
+        case "-n":
+            return new GenerateRevenueCommand(String.join(" ", Arrays.copyOfRange(args, 2, args.length)), "NAME");
+        case "-t":
+            return new GenerateRevenueCommand(String.join(" ", Arrays.copyOfRange(args, 2, args.length)), "TYPE");
         }
         return null;
     }

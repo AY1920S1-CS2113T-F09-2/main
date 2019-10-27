@@ -1,17 +1,18 @@
 /**
- * Handling of JSON File Read/Write operations in Cube
+ * Handling of JSON File Read/Write operations in Cube.
  *
  * @author kuromono
  */
-package cube.util;
 
-import java.io.File;
-import java.io.IOException;
+package cube.util;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cube.exception.CubeException;
 import cube.exception.CubeLoadingException;
+
+import java.io.File;
+import java.io.IOException;
 
 public class FileUtilJson<Type> extends FileUtil {
     private Type fileObject;

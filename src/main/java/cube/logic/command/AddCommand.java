@@ -1,48 +1,50 @@
 /**
- * The command add a food to food list and storage
+ * The command add a food to food list and storage.
  *
  * @author tygq13
  */
+
 package cube.logic.command;
 
-import cube.model.food.FoodList;
-import cube.model.food.Food;
-import cube.model.ModelManager;
-import cube.storage.StorageManager;
 import cube.logic.command.exception.CommandException;
 import cube.logic.command.util.CommandResult;
 import cube.logic.command.util.CommandUtil;
+import cube.model.ModelManager;
+import cube.model.food.Food;
+import cube.model.food.FoodList;
+import cube.storage.StorageManager;
 
-public class AddCommand extends Command{
-	private final Food toAdd;
+public class AddCommand extends Command {
+    private final Food toAdd;
 
-	private final String MESSAGE_SUCCESS = "New Food added: \n" 
-		+ "%1$s\n"
-		+ "Now you have %2$s food in the list.\n";
+    private final String MESSAGE_SUCCESS = "New Food added: \n"
+        + "%1$s\n"
+        + "Now you have %2$s food in the list.\n";
 
-	/**
-	 * Default constructor.
-	 * @param food the food to be added.
-	 */
-	public AddCommand (Food food) {
-		this.toAdd = food;
-	}
+    /**
+     * Default constructor.
+     *
+     * @param food the food to be added.
+     */
+    public AddCommand(Food food) {
+        this.toAdd = food;
+    }
 
-	/**
-	 * Adds food to foodList and store it if the food does not already exists, otherwise throws
-	 * Command exception.
-	 *
-	 * @param list The food list.
-	 * @param storage The current Storage.
-	 * @return The message feedback to user before Programme Exit.
-	 */
-	@Override
-	public CommandResult execute(ModelManager model, StorageManager storage) throws CommandException {
-		FoodList list = model.getFoodList();
-		CommandUtil.requireNameNotExists(list, toAdd.getName());
-		list.add(toAdd);
-		Food.updateRevenue(Food.getRevenue() + toAdd.getFoodRevenue());
-		storage.storeFoodList(list);
-		return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd, list.size()));
-	}
+    /**
+     * Adds food to foodList and store it if the food does not already exists, otherwise throws
+     * Command exception.
+     *
+     * @param model   ModelManager containing FoodList & SalesHistory.
+     * @param storage The current Storage.
+     * @return The message feedback to user before Programme Exit.
+     */
+    @Override
+    public CommandResult execute(ModelManager model, StorageManager storage) throws CommandException {
+        FoodList list = model.getFoodList();
+        CommandUtil.requireNameNotExists(list, toAdd.getName());
+        list.add(toAdd);
+        Food.updateRevenue(Food.getRevenue() + toAdd.getFoodRevenue());
+        storage.storeFoodList(list);
+        return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd, list.size()));
+    }
 }

@@ -1,15 +1,16 @@
 /**
- * Handling of CSV File Read/Write operations in Cube
+ * Handling of CSV File Read/Write operations in Cube.
  *
  * @author kuromono
  */
+
 package cube.util;
 
 import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.MappingIterator;
 import cube.exception.CubeException;
 import cube.exception.CubeLoadingException;
 
@@ -54,7 +55,7 @@ public class FileUtilCSV<Type> extends FileUtil {
 
                 MappingIterator<Type> iterator = reader.readValues(file);
 
-                while(iterator.hasNext()) {
+                while (iterator.hasNext()) {
                     Type currentObject = iterator.next();
                     collectionToLoad.add(currentObject);
                     System.out.println(currentObject.toString());

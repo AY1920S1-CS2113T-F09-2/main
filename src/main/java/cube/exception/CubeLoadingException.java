@@ -3,10 +3,10 @@
  *
  * @author tygq13
  */
+
 package cube.exception;
 
-public class CubeLoadingException extends CubeException
-{
+public class CubeLoadingException extends CubeException {
     /**
      * Default Constructor.
      */

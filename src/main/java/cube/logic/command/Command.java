@@ -3,23 +3,23 @@
  *
  * @author tygq13
  */
+
 package cube.logic.command;
 
-import cube.model.food.FoodList;
-import cube.model.ModelManager;
-import cube.storage.StorageManager;
 import cube.logic.command.exception.CommandException;
 import cube.logic.command.util.CommandResult;
+import cube.model.ModelManager;
+import cube.storage.StorageManager;
 
 public abstract class Command {
-	/**
-	 * Indicates whethis this command signals exit. Default is false.
-	 *
-	 * @return false by defualt.
-	 */
-	public boolean isExit() {
-		return false;
-	}
+    /**
+     * Indicates whethis this command signals exit. Default is false.
+     *
+     * @return false by defualt.
+     */
+    public boolean isExit() {
+        return false;
+    }
 
-	public abstract CommandResult execute(ModelManager model, StorageManager storage) throws CommandException;
+    public abstract CommandResult execute(ModelManager model, StorageManager storage) throws CommandException;
 }

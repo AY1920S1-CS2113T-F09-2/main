@@ -3,6 +3,7 @@
  *
  * @author kuromono
  */
+
 package cube.storage;
 
 import cube.storage.config.ReminderConfig;
@@ -23,6 +24,7 @@ public class ConfigStorage {
 
     /**
      * Getter for UiConfig.
+     *
      * @return UiConfig object containing UI specific configurations.
      */
     public UiConfig getUiConfig() {
@@ -31,6 +33,7 @@ public class ConfigStorage {
 
     /**
      * Setter for UiConfig.
+     *
      * @param uiConfig The UiConfig object that contains UI specific configurations.
      */
     public void setUiConfig(UiConfig uiConfig) {
@@ -39,6 +42,7 @@ public class ConfigStorage {
 
     /**
      * Getter for ReminderConfig.
+     *
      * @return ReminderConfig object containing Reminder Command specific configurations.
      */
     public ReminderConfig getReminderConfig() {
@@ -47,6 +51,7 @@ public class ConfigStorage {
 
     /**
      * Setter for ReminderConfig.
+     *
      * @param reminderConfig The ReminderConfig object that contains Reminder Command specific configurations.
      */
     public void setReminderConfig(ReminderConfig reminderConfig) {

@@ -1,13 +1,16 @@
+/**
+ * Main entry point to launch GUI for Cube.
+ */
+
 package cube;
 
 import cube.exception.CubeException;
 import cube.model.food.Food;
 import cube.storage.StorageManager;
+import cube.ui.MainWindow;
 import cube.util.FileUtilJson;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
-import cube.ui.MainWindow;
 
 public class MainApp extends Application {
 

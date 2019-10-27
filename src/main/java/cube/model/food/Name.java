@@ -8,7 +8,7 @@ public class Name {
 
     private final String name;
 
-    public Name (String name) {
+    public Name(String name) {
 
         this.name = name;
     }
@@ -25,7 +25,7 @@ public class Name {
     @Override
     public boolean equals(Object other) {
         return other == this //short circuit if same object
-               || (other instanceof Name && name.equals(((Name)other).getName()));
+            || (other instanceof Name && name.equals(((Name) other).getName()));
     }
 
 }

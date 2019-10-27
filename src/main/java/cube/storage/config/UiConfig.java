@@ -25,6 +25,7 @@ public class UiConfig {
 
     /**
      * Retrieves the user configured window height for JavaFX window.
+     *
      * @return Window Height.
      */
     public double getWindowHeight() {
@@ -38,6 +39,7 @@ public class UiConfig {
 
     /**
      * Retrieves the user configured window width for JavaFX window.
+     *
      * @return Window Width.
      */
     public double getWindowWidth() {

@@ -3,8 +3,8 @@ package cube.util;
 import cube.exception.CubeException;
 import cube.logic.parser.ParserUtil;
 import cube.model.food.Food;
-import cube.storage.StorageManager;
 import cube.model.food.FoodList;
+import cube.storage.StorageManager;
 import org.junit.jupiter.api.Test;
 
 
@@ -20,6 +20,7 @@ public class FileUtilJsonTest {
 
     /**
      * Creates a sample test JSON file to test Cube.
+     *
      * @throws CubeException
      */
     public void createTestFile(int NUM_OF_PRODUCTS) throws CubeException {
@@ -57,13 +58,13 @@ public class FileUtilJsonTest {
 
     @Test
     public void generateSampleTestFile() throws CubeException {
-        init("data","cube.json");
+        init("data", "cube.json");
         createTestFile(50);
     }
 
     public void testFileUtilPerformance() throws CubeException {
         for (int i = 5; i <= 50000; i *= 10) {
-            init("test",i + ".json");
+            init("test", i + ".json");
             testLoadTime();
             testSaveTime();
             System.out.println();

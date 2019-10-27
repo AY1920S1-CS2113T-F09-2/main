@@ -7,13 +7,13 @@ import cube.model.food.FoodList.SortType;
 
 public class ListCommandParser implements ParserPrototype<ListCommand> {
 
-	public ListCommand parse(String[] args) throws ParserException {
-		if (args.length == 1) {
-			return new ListCommand();
-		}
-		if (args.length == 2) {
-			throw new ParserException(ParserErrorMessage.NOT_ENOUGH_PARAMETER);
-		}
-		return new ListCommand(SortType.valueOf(args[2].toUpperCase()));
-	}
+    public ListCommand parse(String[] args) throws ParserException {
+        if (args.length == 1) {
+            return new ListCommand();
+        }
+        if (args.length == 2) {
+            throw new ParserException(ParserErrorMessage.NOT_ENOUGH_PARAMETER);
+        }
+        return new ListCommand(SortType.valueOf(args[2].toUpperCase()));
+    }
 }
