@@ -17,7 +17,8 @@ import cube.logic.command.util.CommandResult;
 import cube.util.FileUtilJson;
 import cube.exception.CubeException;
 
-import java.util.logging.*;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import cube.util.LogUtil;
 
 /**

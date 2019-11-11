@@ -1,7 +1,6 @@
 /**
  * Handles and configures loggers and handlers.
  * Default logger is configured to 1 log file, 10MB in size, Level.INFO.
- *
  * Design has been referenced from Address Book (Level 3).
  * https://github.com/se-edu/addressbook-level3
  */
@@ -20,7 +19,7 @@ import java.util.logging.SimpleFormatter;
 
 public class LogUtil {
     private static int maxFileCount = 1;
-    private static int maxFileSizeBytes = (int)(Math.pow(2, 20) * 10); // 10MB;
+    private static int maxFileSizeBytes = (int) (Math.pow(2, 20) * 10); // 10MB;
     private static String logFileName = "cube.log";
     private static Level currentLogLevel = Level.INFO;
     private static Logger logger = LogUtil.getLogger(LogUtil.class);
@@ -29,6 +28,7 @@ public class LogUtil {
 
     /**
      * Initializes the logger with custom configurations from the LogConfig object.
+     *
      * @param logConfig Object containing the log configurations to load form.
      */
     public static void init(LogConfig logConfig) {
@@ -100,6 +100,7 @@ public class LogUtil {
     /**
      * Creates a FileHandler for the log file.
      * Outputs the logs into a log file.
+     *
      * @throws IOException if there are problems opening the file.
      */
     private static FileHandler createFileHandler() throws IOException {
